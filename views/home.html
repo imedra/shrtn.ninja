@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>shrtn.ninja | URL link shortener</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css'>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" href="icon.png" type="image"/>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="min-h-screen bg-gray-100 flex flex-col justify-center">
+		<h1 class="text-3xl">i want to shrink this
+			<span class="txt-rotate font-bold" data-period="2000" data-rotate='[ "youtube", "amazon", "news", "wikipedia", "glassdoor", "pintrest", "linkedin"]'></span>
+			link.
+		</h1>
+<h2 class="text-1xl">welcome to <span class="text-red-800 font-bold">shrtn</span>.ninja, the simplest URL shortener.</h2>
+  <div class="relative p-12 w-full sm:max-w-2xl sm:mx-auto">
+    <div class="overflow-hidden z-0 rounded-full relative p-3">
+      <div class="relative flex z-50 bg-white rounded-full">
+        <input id="url" type="text" placeholder="type or paste URL from clipboard..." class="rounded-full flex-1 px-6 py-4 text-gray-700 focus:outline-none">
+        <button id="shorten"class="bg-yellow-900 text-white rounded-full font-semibold px-8 py-4 hover:bg-yellow-800 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50">shorten</button>
+      </div>	
+	  <div class="glow glow-4 z-5 bg-yellow-200 absolute"></div>
+	  <div class="glow glow-4 z-10 bg-yellow-300 absolute"></div>
+	  <div class="glow glow-4 z-15 bg-yellow-400 absolute"></div>
+      <div class="glow glow-1 z-20 bg-yellow-500 absolute"></div>
+      <div class="glow glow-2 z-25 bg-yellow-600 absolute"></div>
+      <div class="glow glow-3 z-30 bg-yellow-700 absolute"></div>
+    </div>
+    &nbsp;
+    <div class="relative flex z-50 bg-white rounded-full">
+      <input id="short" type="text" placeholder="your shrtn.ninja link will appear here" class="rounded-full flex-1 px-6 py-4 text-gray-700 focus:outline-none" disabled>
+      <button onclick="copy()" id="copy-url" class="bg-yellow-900 text-white rounded-full font-semibold px-8 py-4 hover:bg-yellow-800 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50">copy</button>
+    </div>	
+    &nbsp;
+  </div>
+  <div class="bottom">
+    <a href="https://github.com/imEdra" class="active" style="float:left;">A project by Marc Bernardino</a>
+    <a href="https://github.com/imEdra/shrtn.ninja" class="active" style="float:right;">View source code on GitHub</a>
+  </div>
+</div>
+    <script>
+      function copy(id) {
+        var copyText = document.getElementById(id);
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+      }
+      $(document).ready(function() {
+        $('#shorten').click(function() {
+          const url = $('#url').val();
+          $.ajax({url: '/', data: { url }, type: 'POST', success: function(res) {
+            $('#short').val(window.location.hostname+'/'+res.url);
+          }})
+        })
+      })
+    </script>
+<script src="script.js"></script>
+</body>
+</html>
