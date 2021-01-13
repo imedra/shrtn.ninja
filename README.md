@@ -5,7 +5,7 @@
 
 A simple URL (and open source) link shortener application using MongoDB and Node.JS, utilizing frontend framework using [**Tailwind**](https://tailwindcss.com/). I created this project out of boredom, and it took a few hours to construct.
 
-## Requisites
+## Prerequisites
 - A MongoDB account with a database (this is used to store shortened link IDs)
 - Node.JS w/ NPM
 - Nodemon ```npm install -g nodemon```
