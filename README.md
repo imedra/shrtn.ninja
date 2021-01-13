@@ -3,7 +3,7 @@
 # shrtn.ninja | shortenNinja
 **View the live website at [**shrtn.ninja**](https://shrtn.ninja)**
 
-A simple URL (and open source) link shortener application using MongoDB and Node.JS
+A simple URL (and open source) link shortener application using MongoDB and Node.JS, utilizing frontend framework using [**Tailwind**](https://tailwindcss.com/)
 
 ## Requisites
 - A MongoDB account with a database (this is used to store shortened link IDs)
