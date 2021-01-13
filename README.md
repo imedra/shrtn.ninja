@@ -20,14 +20,16 @@ git clone https://github.com/imEdra/shrtn.ninja
 
 After that, run ```npm install``` in the cloned directory
 
-Go into index.js and replace "Your mongoDB link here" with your own URL from mongoDB.
+Go into index.js and replace ```"Your mongoDB link here"``` with your own URL from mongoDB.
 
 Start the application using ```npm start```
 Your website should be live on localhost:8000.
 
 ## Credits
-- [**Marc Bernardino**](https://github.com/imEdra)
+- Created by [**Marc Bernardino**](https://github.com/imEdra)
 - Help from [**Ahmed Mawia**](https://medium.com/@maw1a)
+- Help from [**Andreas Elia**](https://codepen.io/andreaselia)
+- Icons from [**Icons8**](https://Icons8.com)
 
 ## License
-This project is licenced via ISC.
+This project is licenced via MIT.
