@@ -1,7 +1,7 @@
 
 
 # shrtn.ninja | shortenNinja
-**View the live website at [*https://shrnk-ninja.herokuapp.com/**](https://shrnk-ninja.herokuapp.com/)**
+**View the live website at [**https://shrnk-ninja.herokuapp.com/**](https://shrnk-ninja.herokuapp.com/)**
 
 A simple URL (and open source) link shortener application using MongoDB and Node.JS, utilizing frontend framework using [**Tailwind**](https://tailwindcss.com/). I created this project out of boredom, and it took a few hours to construct.
 
